@@ -3,7 +3,8 @@
 }
 
 header{
-	background: #19334d;
+	background: linear-gradient(#19334d 80%, #fff );
+	padding-bottom: 40px;
 	text-align: center;
 }
 
@@ -19,7 +20,7 @@ h2{
 }
 
 body{
-	font-family:Tahoma, Verdana, Arial, Helvetica;
+	font-family:'Merriweather', Tahoma, Verdana, Arial, Helvetica;
 }
 
 label,
@@ -39,8 +40,7 @@ textarea:focus{
 }
 
 textarea:hover{
-	transition: background 4s 2s;
-	background:red;
+    background-color: #ffccff;
 }
 
 input,
@@ -61,20 +61,12 @@ textarea{
 	border-radius: 5px
 }
 
-/*input [type="checkbox"],
-input [type="radio"]*/
 
-#html,
-#css,
-#javascript,
-#code,
-#plain{
-	margin-top: 10px;
-}
 
 textarea{
 	padding: 20px 0px;
 	margin: 20px 0px;
+	-webkit-transition: background-color 2s
 }
 
 input::-webkit-input-placeholder{
@@ -107,8 +99,28 @@ footer{
 }
 
 /**************************************
-LAYOUT STYLES
+CLASS AND ID STYLES
 **************************************/
+
+#name:invalid,
+#mail:invalid{
+  border: 1px solid red;
+}
+
+#name:valid,
+#mail:valid{
+  border: 1px solid green;
+}
+/*input [type="checkbox"],
+input [type="radio"]*/
+
+#html,
+#css,
+#javascript,
+#code,
+#plain{
+	margin-top: 10px;
+}
 
 .wrapper{
 	width: 95%;
@@ -123,8 +135,12 @@ LAYOUT STYLES
 
 .personal,
 .newsletter{
-	border-top: 2px solid #000; 
 	padding-top: 20px;
+}
+
+.personal{
+	border-top: 2px solid #000; 
+	border-bottom: 2px solid #000; 
 }
 
 .newsletter{
@@ -174,4 +190,13 @@ MEDIA QUERIES
 	}
 }
 
-@media (min-width: 1024px ){}
+@media (min-width: 1024px ){
+	.wrapper{
+		width: 80%
+	}
+
+	label,
+p{
+	font-size: 1em;
+}
+}
