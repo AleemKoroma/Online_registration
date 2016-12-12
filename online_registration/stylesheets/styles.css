@@ -3,7 +3,8 @@
 }
 
 header{
-	background: #19334d;
+	background: linear-gradient(#19334d 80%, #fff );
+	padding-bottom: 40px;
 	text-align: center;
 }
 
@@ -19,7 +20,7 @@ h2{
 }
 
 body{
-	font-family:Tahoma, Verdana, Arial, Helvetica;
+	font-family:'Merriweather', Tahoma, Verdana, Arial, Helvetica;
 }
 
 label,
@@ -33,10 +34,39 @@ fieldset{
 	/*outline: none;*/
 }
 
+input[type=text]:focus,
+textarea:focus{
+	background: #ffdd99;
+}
+
+textarea:hover{
+    background-color: #ffccff;
+}
+
 input,
 select,
 button{
-	display: block;
+	display:inline-block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+select,
+textarea{
+	width: 100%;
+	background: #f2f2f2;
+	border: none;
+	padding: 10px 5px;
+	border-radius: 5px
+}
+
+
+
+textarea{
+	padding: 20px 0px;
+	margin: 20px 0px;
+	-webkit-transition: background-color 2s
 }
 
 input::-webkit-input-placeholder{
@@ -61,9 +91,36 @@ legend{
 
 }
 
+footer{
+	text-align: center;
+	font-size: .825em;
+	font-style: italic;
+	color: #8c8c8c;
+}
+
 /**************************************
-LAYOUT STYLES
+CLASS AND ID STYLES
 **************************************/
+
+#name:invalid,
+#mail:invalid{
+  border: 1px solid red;
+}
+
+#name:valid,
+#mail:valid{
+  border: 1px solid green;
+}
+/*input [type="checkbox"],
+input [type="radio"]*/
+
+#html,
+#css,
+#javascript,
+#code,
+#plain{
+	margin-top: 10px;
+}
 
 .wrapper{
 	width: 95%;
@@ -78,10 +135,68 @@ LAYOUT STYLES
 
 .personal,
 .newsletter{
-	border-top: 2px solid #000; 
 	padding-top: 20px;
+}
+
+.personal{
+	border-top: 2px solid #000; 
+	border-bottom: 2px solid #000; 
 }
 
 .newsletter{
 	display: inline-block;
+}
+
+/**************************************
+MEDIA QUERIES
+**************************************/
+
+@media (min-width: 760px ){
+
+	label{
+		/*margin-right: 15%;*/
+	}
+
+	.wrapper{
+		width: 60%;
+	}
+
+	#name,
+	#mail,
+	#phone,
+	#street,
+	#city,
+	#state,
+	#zip{
+		display: inline;
+		width: 70%;
+		float: right;
+		
+	}
+
+	.personal fieldset label{
+		display: inline;
+	}
+
+	.contact-info{
+		/*width: 100%;
+*/		margin-top: 20px;
+	}
+
+	.clearfix::after {
+		content:"";
+		display: table;
+		clear: both;
+	}
+}
+
+@media (min-width: 1024px ){
+	.wrapper{
+		width: 80%
+	}
+
+	label,
+p{
+	font-size: 1em;
+}
 }
